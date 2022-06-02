@@ -17,7 +17,7 @@ public class Tablo extends javax.swing.JFrame {
     public Tablo() {
         initComponents();
         gösterge_tablosu.setModel(tablo);
-        tablo.setColumnIdentifiers(new String[] {"Ad","Tür","Giris","SKT","Adet");
+        tablo.setColumnIdentifiers(new String[] {"Ad","Tür","Giris","SKT","Adet"});
          
     }
 
@@ -42,6 +42,7 @@ public class Tablo extends javax.swing.JFrame {
         btn_kapat = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         gösterge_tablosu = new javax.swing.JTable();
+        VERESİYE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("KAYIT ALANI");
@@ -112,11 +113,18 @@ public class Tablo extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(gösterge_tablosu);
 
+        VERESİYE.setText("VERESİYE DEFTERİ");
+        VERESİYE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VERESİYEActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -140,9 +148,13 @@ public class Tablo extends javax.swing.JFrame {
                             .addComponent(btn_iptal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_cikis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_kapat, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(VERESİYE, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +190,9 @@ public class Tablo extends javax.swing.JFrame {
                         .addComponent(btn_cikis)
                         .addGap(18, 18, 18)
                         .addComponent(btn_kapat)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(VERESİYE)
+                .addContainerGap())
         );
 
         pack();
@@ -189,7 +203,7 @@ public class Tablo extends javax.swing.JFrame {
     }//GEN-LAST:event_sys_adActionPerformed
 
     private void btn_kaydetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kaydetActionPerformed
-        String Ad=sys_ad.getText();
+         String Ad=sys_ad.getText();
         String Tür=sys_tür.getText();
         String Giris=sys_giris_tarihi.getText();
         String SKT=sys_son_tüketim_tarihi.getText();
@@ -231,6 +245,12 @@ public class Tablo extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_kapatActionPerformed
 
+    private void VERESİYEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VERESİYEActionPerformed
+        Veresiye Veresiye_2 =new Veresiye();
+           Veresiye_2.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_VERESİYEActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -267,6 +287,7 @@ public class Tablo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton VERESİYE;
     private javax.swing.JButton btn_cikis;
     private javax.swing.JButton btn_iptal;
     private javax.swing.JButton btn_kapat;
